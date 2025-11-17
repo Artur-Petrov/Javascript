@@ -28,3 +28,126 @@
 //         console.log(item);
 //     }
 // }
+
+// #59g0IsA
+//
+// – створити функцію, яка створює параграф з текстом. Текст задати через аргумент
+
+// const paragraphFactory = (text) =>{
+//     document.write(`<p>${text}</p>`)
+// };
+// paragraphFactory('hello world');
+
+// #hOL6126
+//
+// – створити функцію, яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+
+
+// const listFactory = (text) => {
+//     document.write(`<ul>
+//     <li>${text}</li>
+//     <li>${text}</li>
+//     <li>${text}</li>
+// </ul>`)
+// };
+// listFactory('hello world');
+
+// #0Kxco1edSN
+//
+// – створити функцію, яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+
+// const listFactory = (text, liNum) => {
+//   document.write(`<ul>`);
+//   for (let i = 0; i < liNum ; i++) {
+//     document.write(`<li>${text}</li>`);
+//   }
+//   document.write(`</ul>`);
+// };
+// listFactory('hello world', 5);
+
+// #gEFoxMMO
+//
+// – створити функцію, яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+
+// const arrayList = (arr) =>{
+//   document.write(`<ul>`)
+//   for (const arrElement of arr) {
+//     document.write(`<li>${arrElement}</li>`)
+//   }
+//   document.write(`</ul>`)
+// }
+// arrayList([1, 2, -3, 'qwerty', true]);
+
+// #bovDJDTIjt
+//
+// – створити функцію, яка приймає масив об’єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об’єкту окремий блок.
+
+// const arrayList = (arr) =>{
+//   for (const arrItem of arr) {
+//     document.write(`<div>${arrItem.id} ${arrItem.name} ${arrItem.age}</div>`);
+//   }
+// }
+// arrayList([
+//   {id: 1, name: 'Tom', age: 18},
+//   {id: 2, name: 'Lui', age: 19},
+//   {id: 3, name: 'Eric', age: 20},
+//   {id: 4, name: 'Brain', age: 21},
+//   {id: 5, name: 'Ivan', age: 22}
+// ]);
+
+// #pghbnSB
+//
+// – створити функцію, яка повертає найменше число з масиву
+
+// const leastNum = (arr) =>{
+//   let result = arr[0];
+//   for (const item of arr) {
+//     if (item < result){
+//         result = item;
+//     }
+//   }
+//   return result;
+// }
+// console.log(leastNum([-8, 1, 2, -12, 0, -2, -37, -15]));
+//
+// #EKRNVPM
+//
+// – створити функцію sum(arr), яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
+
+// const sum = (arr) =>{
+//   let result = 0;
+//   for (const item of arr) {
+//     result += item;
+//   }
+//   return result;
+// }
+// console.log(sum([1, 2, 10]));
+
+// #kpsbSQCt2Lf
+//
+// – створити функцію swap(arr,index1,index2). Функція міняє місцями значення у відповідних індексах
+// const swap = (arr,index1,index2) => {
+//   let temp = arr[index1];
+//   arr[index1] = arr[index2];
+//   arr[index2] = temp;
+//
+//   return arr;
+// }
+// console.log(swap([11, 22, 33, 44], 1, 2));
+//
+// #mkGDenYnNjn
+//
+// – Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
+//
+// Приклад exchange(10000,[{currency:’USD’,value:40},{currency:’EUR’,value:42}],’USD’) // => 250
+
+const exchange = (sumUAH,currencyValues,exchangeCurrency) => {
+  let chosenCurrency;
+  for (const i of currencyValues) {
+    if(i.currency === exchangeCurrency){
+      chosenCurrency = i;
+    }
+  }
+  return sumUAH/chosenCurrency.value;
+}
+console.log(exchange(10000, [{currency: 'USD', value: 40}, {currency: 'EUR', value: 42}], 'USD'));
