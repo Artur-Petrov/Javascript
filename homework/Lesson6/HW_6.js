@@ -97,3 +97,246 @@
 // }
 //
 // console.log(sortNums([11, 21, 3], 'descending'));
+
+// #yo06d74c1C
+//
+// – є масив
+//
+// let coursesAndDurationArray = [
+//
+//     {title: ‘JavaScript Complex’, monthDuration: 5},
+//
+// {title: ‘Java Complex’, monthDuration: 6},
+//
+// {title: ‘Python Complex’, monthDuration: 6},
+//
+// {title: ‘QA Complex’, monthDuration: 4},
+//
+// {title: ‘FullStack’, monthDuration: 7},
+//
+// {title: ‘Frontend’, monthDuration: 4}
+//
+// ];
+//
+//  — відсортувати його за спаданням за monthDuration
+//
+//  — відфільтрувати, залишивши тільки курси з тривалістю понад 5 місяців
+//
+//  — за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
+
+// const coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// const task = coursesAndDurationArray
+//     .sort((a, b) => b.monthDuration - a.monthDuration)
+//     .filter((a) => a.monthDuration > 5)
+//     .map((value, index) => ({...value, id: index +1}));
+// console.log(task);
+
+// #4LJn7zBx
+//
+// взяти з arrays.js масив coursesArray
+//
+// –написати пошук всіх об’єктів, в яких в modules є sass
+//
+// –написати пошук всіх об’єктів, в яких в modules є docker
+
+// let coursesArray = [
+//     {
+//         title: 'JavaScript Complex',
+//         monthDuration: 5,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+//     },
+//     {
+//         title: 'Java Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'java core',
+//             'java advanced']
+//     },
+//     {
+//         title: 'Python Complex',
+//         monthDuration: 6,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'python core',
+//             'python advanced']
+//     },
+//     {
+//         title: 'QA Complex',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+//     },
+//     {
+//         title: 'FullStack',
+//         monthDuration: 7,
+//         hourDuration: 909,
+//         modules: ['html',
+//             'css',
+//             'js',
+//             'mysql',
+//             'mongodb',
+//             'react',
+//             'angular',
+//             'aws',
+//             'docker',
+//             'git',
+//             'node.js',
+//             'python',
+//             'java']
+//     },
+//     {
+//         title: 'Frontend',
+//         monthDuration: 4,
+//         hourDuration: 909,
+//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+//     }
+// ];
+// console.log(coursesArray.filter(item => {
+//     item.modules.includes('sass')
+// }));
+// console.log(coursesArray.filter(item => {
+//     item.modules.includes('docker')
+// }));
+//
+// #bolvdlhP
+//
+// описати колоду карт (від 6 до туза без джокерів). Більшу частину колоди можна описати з використанням циклу
+//
+// Після опису, використовуючи функції масивів:
+//
+//     – знайти піковий туз
+//
+//  – всі шістки
+//
+//  – всі червоні карти
+//
+//  – всі буби
+//
+//  – всі трефи від 9 та більше
+//
+//
+//
+// Приклад моделі об’єкту карти:
+//
+// {
+//
+//     cardSuit: ”, // ‘spade’, ‘diamond’,’heart’, ‘clubs’
+//
+//     value: ”, // ‘6’-’10’, ‘ace’,’jack’,’queen’,’king’
+//
+//     color:”, // ‘red’,’black’
+//
+// }
+
+// let suits = ['spade', 'diamond', 'heart', 'club'];
+// let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+//
+// const allCards = [];
+// for (const suit of suits) {
+//     for (const value of values) {
+//         const card = {cardSuit : suit, cardValue : value};
+//         if (suit === 'spade' || suit === 'clubs'){
+//             card.color = 'black';
+//         }else {
+//             card.color = 'red';
+//         }
+//         allCards[allCards.length] = card;
+//     }
+// }
+//
+// //     – знайти піковий туз
+// console.log(allCards.find(card => card.cardSuit === 'spade' && card.cardValue === 'ace'));
+//
+// //  – всі шістки
+// console.log(allCards.filter(card => card.cardValue === '6' ));
+//
+// //  – всі червоні карти
+// console.log(allCards.filter(card => card.color === 'red'));
+//
+// //  – всі буби
+// console.log(allCards.filter(card => card.cardSuit === 'diamond'));
+//
+// //  – всі трефи від 9 та більше
+// console.log(allCards.filter(card => (card.cardValue !== '6' && card.cardValue !== '7' && card.cardValue !== '8' && card.cardValue !== '9') && card.cardSuit === 'club'));
+
+// #EP5I1UUzAX
+//
+// Взяти описану колоду карт, та за допомогою reduce “упакувати” всі карти по “мастях” в об’єкт
+//
+// Приклад моделі кінцевого об’єкту
+//
+// {
+//
+//     spades:[],
+//
+//         diamonds:[],
+//
+//     hearts:[],
+//
+//     clubs:[]
+//
+// }
+
+let suits = ['spade', 'diamond', 'heart', 'club'];
+let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+
+const allCards = [];
+for (const suit of suits) {
+    for (const value of values) {
+        const card = {cardSuit : suit, cardValue : value};
+        if (suit === 'spade' || suit === 'clubs'){
+            card.color = 'black';
+        }else {
+            card.color = 'red';
+        }
+        allCards[allCards.length] = card;
+    }
+}
+const reduce = allCards.reduce((acc, card) => {
+    switch (card.cardSuit) {
+        case 'spade':
+            acc.spades.push(card);
+            break;
+        case 'diamond':
+            acc.diamonds.push(card);
+            break;
+        case 'club':
+            acc.clubs.push(card);
+            break;
+        case 'heart':
+            acc.hearts.push(card);
+            break;
+
+    } return acc;
+}, {
+    spades: [],
+    diamonds: [],
+    hearts: [],
+    clubs: []
+});
+
+console.log(reduce);
