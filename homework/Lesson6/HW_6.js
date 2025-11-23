@@ -146,81 +146,81 @@
 //
 // –написати пошук всіх об’єктів, в яких в modules є docker
 
-// let coursesArray = [
-//     {
-//         title: 'JavaScript Complex',
-//         monthDuration: 5,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
-//     },
-//     {
-//         title: 'Java Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'java core',
-//             'java advanced']
-//     },
-//     {
-//         title: 'Python Complex',
-//         monthDuration: 6,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'python core',
-//             'python advanced']
-//     },
-//     {
-//         title: 'QA Complex',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
-//     },
-//     {
-//         title: 'FullStack',
-//         monthDuration: 7,
-//         hourDuration: 909,
-//         modules: ['html',
-//             'css',
-//             'js',
-//             'mysql',
-//             'mongodb',
-//             'react',
-//             'angular',
-//             'aws',
-//             'docker',
-//             'git',
-//             'node.js',
-//             'python',
-//             'java']
-//     },
-//     {
-//         title: 'Frontend',
-//         monthDuration: 4,
-//         hourDuration: 909,
-//         modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
-//     }
-// ];
-// console.log(coursesArray.filter(item => {
-//     item.modules.includes('sass')
-// }));
-// console.log(coursesArray.filter(item => {
-//     item.modules.includes('docker')
-// }));
+let coursesArray = [
+    {
+        title: 'JavaScript Complex',
+        monthDuration: 5,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'node.js']
+    },
+    {
+        title: 'Java Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'java core',
+            'java advanced']
+    },
+    {
+        title: 'Python Complex',
+        monthDuration: 6,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'angular',
+            'aws',
+            'docker',
+            'python core',
+            'python advanced']
+    },
+    {
+        title: 'QA Complex',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'git', 'QA/QC']
+    },
+    {
+        title: 'FullStack',
+        monthDuration: 7,
+        hourDuration: 909,
+        modules: ['html',
+            'css',
+            'js',
+            'mysql',
+            'mongodb',
+            'react',
+            'angular',
+            'aws',
+            'docker',
+            'git',
+            'node.js',
+            'python',
+            'java']
+    },
+    {
+        title: 'Frontend',
+        monthDuration: 4,
+        hourDuration: 909,
+        modules: ['html', 'css', 'js', 'mysql', 'mongodb', 'react', 'angular', 'aws', 'docker', 'git', 'sass']
+    }
+];
+console.log(coursesArray.filter(item => {
+   return item.modules.includes('sass')
+}));
+console.log(coursesArray.filter(item => {
+    return item.modules.includes('docker')
+}));
 //
 // #bolvdlhP
 //
@@ -301,42 +301,42 @@
 //
 // }
 
-let suits = ['spade', 'diamond', 'heart', 'club'];
-let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
-
-const allCards = [];
-for (const suit of suits) {
-    for (const value of values) {
-        const card = {cardSuit : suit, cardValue : value};
-        if (suit === 'spade' || suit === 'clubs'){
-            card.color = 'black';
-        }else {
-            card.color = 'red';
-        }
-        allCards[allCards.length] = card;
-    }
-}
-const reduce = allCards.reduce((acc, card) => {
-    switch (card.cardSuit) {
-        case 'spade':
-            acc.spades.push(card);
-            break;
-        case 'diamond':
-            acc.diamonds.push(card);
-            break;
-        case 'club':
-            acc.clubs.push(card);
-            break;
-        case 'heart':
-            acc.hearts.push(card);
-            break;
-
-    } return acc;
-}, {
-    spades: [],
-    diamonds: [],
-    hearts: [],
-    clubs: []
-});
-
-console.log(reduce);
+// let suits = ['spade', 'diamond', 'heart', 'club'];
+// let values = ['6', '7', '8', '9', '10', 'jack', 'queen', 'king', 'ace'];
+//
+// const allCards = [];
+// for (const suit of suits) {
+//     for (const value of values) {
+//         const card = {cardSuit : suit, cardValue : value};
+//         if (suit === 'spade' || suit === 'clubs'){
+//             card.color = 'black';
+//         }else {
+//             card.color = 'red';
+//         }
+//         allCards[allCards.length] = card;
+//     }
+// }
+// const reduce = allCards.reduce((acc, card) => {
+//     switch (card.cardSuit) {
+//         case 'spade':
+//             acc.spades.push(card);
+//             break;
+//         case 'diamond':
+//             acc.diamonds.push(card);
+//             break;
+//         case 'club':
+//             acc.clubs.push(card);
+//             break;
+//         case 'heart':
+//             acc.hearts.push(card);
+//             break;
+//
+//     } return acc;
+// }, {
+//     spades: [],
+//     diamonds: [],
+//     hearts: [],
+//     clubs: []
+// });
+//
+// console.log(reduce);
