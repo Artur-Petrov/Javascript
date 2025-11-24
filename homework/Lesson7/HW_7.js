@@ -44,24 +44,54 @@
 // створити пустий масив, наповнити його 10 об’єктами Client
 
 
-function Client(id, name, surname, email, phone, order){
-    this.id = id;
-    this.name = name;
-    this.surname = surname;
-    this.email = email;
-    this.phone = phone;
-    this.order = order;
-}
-let clientBase = [
-    new Client(1, 'vasya', 'vasyenko', 'vasya.com', '+38067676767', ['kokos', 'ogirok']),
-    new Client(2, 'petya', 'petyenko', 'petya.com', '+24234242424', ['morkva', 'jablyko']),
-    new Client(3, 'kolya', 'kolyenko', 'kolya.com', '+43434343434', ['kiwi', 'ogirok']),
-    new Client(4, 'olya', 'olyenko', 'olya.com', '+6556565656565', ['maslo', 'potato']),
-    new Client(5, 'max', 'maxenko', 'max.com', '+1112212111212', ['moloko', 'cheese']),
-    new Client(6, 'anya', 'anyemko', 'anya.com', '+8989898989898', ['kovbasa', 'ogirok']),
-    new Client(7, 'oleg', 'olegenko', 'oleg.com', '+1233443546644', ['kokos', 'sosusku']),
-    new Client(8, 'andrey', 'andryenko', 'andrey.com', '+707070707070', ['palyanytsa', 'kiwi']),
-    new Client(9, 'masha', 'mashenko', 'masha.com', '+239846749823498', ['onion', 'tomat']),
-    new Client(10, 'igor', 'igorenko', 'igor.com', '+097807087960796', ['juice', 'morkva'])
-];
-console.log(clientBase);
+// function Client(id, name, surname, email, phone, order){
+//     this.id = id;
+//     this.name = name;
+//     this.surname = surname;
+//     this.email = email;
+//     this.phone = phone;
+//     this.order = order;
+// }
+// let clientBase = [
+//     new Client(1, 'vasya', 'vasyenko', 'vasya.com', '+38067676767', ['kokos', 'ogirok', 'potato']),
+//     new Client(2, 'petya', 'petyenko', 'petya.com', '+24234242424', ['morkva', 'jablyko', 'cherry']),
+//     new Client(3, 'kolya', 'kolyenko', 'kolya.com', '+43434343434', ['kiwi', 'ogirok']),
+//     new Client(4, 'olya', 'olyenko', 'olya.com', '+6556565656565', ['maslo']),
+//     new Client(5, 'max', 'maxenko', 'max.com', '+1112212111212', ['moloko', 'cheese', 'kiwi', 'peach']),
+//     new Client(6, 'anya', 'anyemko', 'anya.com', '+8989898989898', ['kovbasa', 'ogirok']),
+//     new Client(7, 'oleg', 'olegenko', 'oleg.com', '+1233443546644', ['kokos']),
+//     new Client(8, 'andrey', 'andryenko', 'andrey.com', '+707070707070', ['palyanytsa', 'kiwi', 'kokos', 'papaya', 'mango']),
+//     new Client(9, 'masha', 'mashenko', 'masha.com', '+239846749823498', ['onion', 'tomat', 'bylochka']),
+//     new Client(10, 'igor', 'igorenko', 'igor.com', '+097807087960796', ['juice', 'morkva'])
+//];
+// console.log(clientBase);
+
+// #8abtVjRv
+//
+// – Взяти масив (Client [] з попереднього завдання). Відсортувати його за кількістю товарів в полі order по зростанню. (sort)
+
+// let sortedOrders = clientBase.sort((order1, order2) => order1.order.length - order2.order.length);
+// console.log(sortedOrders);
+
+// #vV9a6584I5
+//
+// – Створити функцію конструктор, яка дозволяє створювати об’єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об’єм двигуна. додати в об’єкт функції:
+//
+//     — drive () – яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+//
+//     — info () – яка виводить всю інформацію про автомобіль в форматі `назва поля – значення поля`
+//
+//     — increaseMaxSpeed (newSpeed) – яка підвищує значення максимальної швидкості на значення newSpeed
+//
+//     — changeYear (newValue) – змінює рік випуску на значення newValue
+//
+//     — addDriver (driver) – приймає об’єкт який “водій” з довільним набором полів, і додає його в поточний об’єкт car
+
+// function Car(model, producer, productionYear, maxSpeed, engineVolume){
+//     this.model = model;
+//     this.producer = producer;
+//     this.productionYear = productionYear;
+//     this.maxSpeed = maxSpeed;
+//     this.engineVolume = engineVolume;
+//
+// }
