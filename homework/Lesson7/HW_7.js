@@ -94,4 +94,151 @@
 //     this.maxSpeed = maxSpeed;
 //     this.engineVolume = engineVolume;
 //
+//     this.drive = function () {
+//         console.log(`Driving with the ${this.maxSpeed} per hour`);
+//     };
+//     this.info = function () {
+//         for (const i in this) {
+//             console.log(i, this[i]);
+//         }
+//     };
+//     this.increaseMaxSpeed = function (newSpeed){
+//         this.maxSpeed += newSpeed;
+//     };
+//     this.changeYear = function (newYear){
+//         this.productionYear =  newYear;
+//     };
+//     this.addDriver = function (driver){
+//         this.driver = driver;
+//     };
+// }
+// let car = new Car('smart','Mercedes Benz', 2008, 280, 5);
+// console.log(car);
+//
+// car.drive();
+// car.info();
+// car.increaseMaxSpeed(300);
+// car.changeYear(2025);
+// car.addDriver({});
+// console.log(car);
+
+// #5kla3yMpgp
+//
+// – (Те саме, тільки через клас)
+//
+// Створити клас, який дозволяє створювати об’єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об’єм двигуна. додати в об’єкт функції:
+//
+//     — drive () – яка виводить в консоль `їдемо зі швидкістю ${максимальна швидкість} на годину`
+//
+//     — info () – яка виводить всю інформацію про автомобіль в форматі `назва поля – значення поля`
+//
+//     — increaseMaxSpeed (newSpeed) – яка підвищує значення максимальної швидкості на значення newSpeed
+//
+//     — changeYear (newValue) – змінює рік випуску на значення newValue
+//
+//     — addDriver (driver) – приймає об’єкт, який “водій” з довільним набором полів, і додає його в поточний об’єкт car
+
+// class Car{
+//     constructor(model, producer, productionYear, maxSpeed, engineVolume) {
+//         this.model = model;
+//         this.producer = producer;
+//         this.productionYear = productionYear;
+//         this.maxSpeed = maxSpeed;
+//         this.engineVolume = engineVolume;
+//     }
+//     drive() {
+//         console.log(`Driving with the ${this.maxSpeed} per hour`);
+//     };
+//     info() {
+//         for (const i in this) {
+//             console.log(i, this[i]);
+//         }
+//     };
+//     increaseMaxSpeed(newSpeed){
+//         this.maxSpeed += newSpeed;
+//     };
+//     changeYear(newYear){
+//         this.productionYear =  newYear;
+//     };
+//     addDriver(driver){
+//         this.driver = driver;
+//     };
+// }
+// let car = new Car('smart','Mercedes Benz', 2008, 280, 5);
+// console.log(car);
+//
+// car.drive();
+// car.info();
+// car.increaseMaxSpeed(300);
+// car.changeYear(2025);
+// car.addDriver({});
+// console.log(car);
+
+// #zg6Fifnqig
+//
+// – створити клас/функцію конструктор попелюшка з полями ім’я, вік, розмір ноги. Створити масив з 10 попелюшок.
+//
+//     Створити об’єкт класу “принц” за допомоги класу який має поля ім’я, вік, туфелька яку він знайшов.
+//
+//     За допомоги циклу знайти, яка попелюшка повинна бути з принцом.
+//
+// ! Додатково, знайти необхідну попелюшку за допомогою функції масиву find та відповідного колбеку
+
+// class Popelyshka{
+//     constructor(name, age, footSize) {
+//         this.name = name;
+//         this.age = age;
+//         this.footSize = footSize;
+//     }
+// };
+//
+// class Prince{
+//     constructor(name, age, tyfelka) {
+//         this.name = name;
+//         this.age = age;
+//         this.tyfelka = tyfelka;
+//     }
+// }
+//
+// let popelyshkas = [
+//     new Popelyshka('Diana', 18, 32),
+//     new Popelyshka('Alina', 19, 33),
+//     new Popelyshka('Olya', 21, 33),
+//     new Popelyshka('Tonya', 18, 34),
+//     new Popelyshka('Tania', 32, 35),
+//     new Popelyshka('Ira', 34, 36),
+//     new Popelyshka('Anna', 22, 37),
+//     new Popelyshka('Nastya', 23, 38),
+//     new Popelyshka('Polina', 18, 34),
+//     new Popelyshka('Victoria', 25, 32),
+// ];
+// let prince = new Prince('Daniel', 23, 38);
+//
+// // for (const popelyshka of popelyshkas) {
+// //     if(popelyshka.footSize === prince.tyfelka) {
+// //         console.log('Prince found the right popelyshka');
+// //     }
+// // }
+// let find = popelyshkas.find(popelyshka => popelyshka.footSize === prince.tyfelka);
+// console.log(find);
+
+// #gsKLAsNWM
+//
+// *Через Array.prototype. створити власний foreach, filter
+
+// Array.prototype.myForEach = function (call) {
+//     let arr = this;
+//     for (const arrElement of arr) {
+//         call(arrElement);
+//     }
+// }
+
+// Array.prototype.myFilter = function (condition) {
+//     let arr = [];
+//     for (const arrElement of this) {
+//         if (condition(arrElement)) {
+//             arr.push(arrElement);
+//         }
+//     }
+//     return arr;
 // }
