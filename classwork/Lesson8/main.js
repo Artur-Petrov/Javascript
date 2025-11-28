@@ -8,7 +8,7 @@
 // user?.name?.firstName;
 
 
-// spred копіює один обєкт в інший
+// spred копіює один обєкт в інший, поверхнева копія
 
 // let user = {
 //     name: 'John',
@@ -39,6 +39,37 @@
 
 // copy
 
-let nums = [11, 22, 33];
-let nums2 = [...nums];
-console.log(nums === nums2); // false вони тепер не залежні
+// let nums = [11, 22, 33];
+// let nums2 = [...nums];
+// console.log(nums === nums2); // false вони тепер не залежні
+
+// поверхневі та глибокі копії
+
+let user = {
+    name: 'John',
+    skills: ['html', 'css']
+};
+
+// let userClone = {...user};
+// console.log(user === userClone); // false
+// console.log(user.skills === userClone.skills); // true бо масив зі скілами це силочний тип данних, їх посилання однакові
+
+// let s = JSON.stringify(123); // перетворює все на стрінгове значення
+// console.log(typeof s, s);
+// let s = JSON.stringify(user); // convert to JSON
+// console.log(s); // ключ і значення будуть огорнуті в ""  {"name":"John","skills":["html","css"]}
+// JSON - javascript object notation
+
+let userJsonClone = JSON.stringify(user);
+console.log(userJsonClone);
+// let parse = JSON.parse('123');// зворотнє до stringify, перетворює в number
+// console.log(typeof parse, parse);
+let parse = JSON.parse(userJsonClone); // повертає назад наш початковий обєкт вже не стрінг
+console.log(parse);
+
+// JSON не повертає функції, поведінку
+
+// клонуємо через Object
+
+let assign = Object.assign({}, user);// {} це куда ми копіюємо а user це що ми копіюємо
+console.log(assign);// функції також копіює але повне копіювання тобто глибоке  тільки через JSON
