@@ -52,10 +52,27 @@
     // target.onmouseleave = function (event) {// вивіз курсор з квадрата leave
     //     console.log('leave');
     // }
-    let i1 = document.getElementById("i1");
-    i1.oninput = function(){
-        console.log(this.value);
-        target.innerText = this.value; //тут ми в дів передали текст з інпуту
+    // let i1 = document.getElementById("i1");
+    // i1.oninput = function(){
+    //     console.log(this.value);
+    //     target.innerText = this.value; //тут ми в дів передали текст з інпуту
+    // }
+
+    // відправка інформації з форми
+    // let fi = document.forms.fi;
+    // f1.onsubmit = function (event) {
+    //     event.preventDefault(); // тут каже сабміту, не перезавантажувати сторінку
+    //     console.log('hello');
+    //     let user = {name: this.username.value};
+    //     console.log(user);
+    // }
+
+    window.onload = function () {
+        console.log('load');
+    }
+
+    document.onreadystatechange = function () {
+        console.log(document.readyState);
     }
 </script>
 
