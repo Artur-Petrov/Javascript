@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 10</title>
+    <style>
+        #target{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<!--event події-->
+
+<!--js events list-->
+<div id="target"></div>
+<form id="f1" action="" name="username">
+<!--    action це для посилання куда ми переходимо після натиску на кнопку Submit без того сторінка просто перезавантажується-->
+    <input id="i1">
+    <button>Submit</button>
+</form>
+<script>
+    let target = document.getElementById('target');
+    // target.onclick = function (event) { // обєкт події який містить в собі інформацію про те як цей клік стався і на який елемент він стався
+    //     console.log('clicked');
+    //     console.log(event);
+    // }
+
+    // target.onmousemove = function (event) {
+    //     console.log(event.clientX, event.clientY);
+    //     let r = event.clientX;
+    //     let g = event.clientX;
+    //     let b = event.clientY;
+    //     this.style.background = `rgb(${r}, ${g}, ${b})`;
+    // }
+
+    // target.addEventListener('click', function (event) { // в таких випадках стрілочну не використовуємо бо втратиться  сила this
+    //     // такий запис треба щоб не перевизначати постійно функцію onclick наприклад
+    //     // тут в нас спрацює і наша перща функія onclick і ця
+    //     console.log('wdwdqwedqwed');
+    //
+    // })
+
+    // target.onmouseover = function (event) {// завів курсор на квадрат over
+    //     console.log('over');
+    // }
+    // target.onmouseleave = function (event) {// вивіз курсор з квадрата leave
+    //     console.log('leave');
+    // }
+    let i1 = document.getElementById("i1");
+    i1.oninput = function(){
+        console.log(this.value);
+        target.innerText = this.value; //тут ми в дів передали текст з інпуту
+    }
+</script>
+
+</body>
+</html>
