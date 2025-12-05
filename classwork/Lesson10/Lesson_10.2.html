@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local storage</title>
+</head>
+<body>
+
+<script>
+    //local storage
+    // localStorage.setItem('asd', 'qwe'); // 1 це ключ 2 це стрінгове значення
+    // // якщо видалити цей рядок то локал сторидж залишиться asd qwe
+    //
+    //
+    // // щоб дістати щось викликаємо команду з назвою ключа
+    // let item = localStorage.getItem('asd');
+    // console.log(item);
+    // localStorage.clear();
+    localStorage.setItem('user', JSON.stringify({id: 1, name: 'kokos'})); // то щоб передати обєкт як стрінгу
+
+    // щоб обновити якісь поля в обєкті
+
+    let userJSON = localStorage.getItem('user');
+    console.log(typeof userJSON, userJSON);
+    let user = JSON.parse(userJSON);
+    console.log(typeof user, user);
+    user.age = 31;
+    console.log(user);
+
+    let stringifyed = JSON.stringify(user);
+    localStorage.setItem('user', stringifyed);
+
+</script>
+
+</body>
+</html>
