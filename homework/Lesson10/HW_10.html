@@ -14,8 +14,17 @@
 <!---->
 
 <!--Task 2 #j693ca8-->
-<input id="age" placeholder="Enter your age">
-<button id="check">Send</button>
+<!--<input id="age" placeholder="Enter your age">-->
+<!--<button id="check">Send</button>-->
+<!---->
+
+<!--Task 3 #ymAmN2xJ-->
+<form name="user_form">
+    <input type="text" name="user_name">
+    <input type="text" name="user_username">
+    <input type="number" name="user_age">
+    <button>Submit</button>
+</form>
 <!---->
 <script>
 //     #sH8c4er
@@ -31,21 +40,42 @@
 // #j693ca8
 //
 // – створити інпут, який приймає вік людини, та кнопку, яка підтверджує дію. При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік, чи менше він за 18, та повідомити про це користувача
-let age = document.getElementById('age');
-let check = document.getElementById('check');
+// let age = document.getElementById('age');
+// let check = document.getElementById('check');
+//
+// check.onclick = function () {
+//     let userAge = +age.value;
+//     let msg = document.createElement('p');
+//
+//     if (!userAge) {
+//         msg.innerText = 'Please enter correct age';
+//     } else if (userAge >= 18) {
+//         msg.innerText = 'You are welcome!';
+//     } else {
+//         msg.innerText = 'Your are not allowed!';
+//     }
+//     document.body.appendChild(msg);
+// }
 
-check.onclick = function () {
-    let userAge = +age.value;
-    let msg = document.createElement('p');
+// #ymAmN2xJ
+//
+// Створити форму з трьома полями для name, surname, age та кнопкою. При натисканні на кнопку зчитати дані з полів, та вивести об’єкт в документ. Іншими словами : заповнили форму, натиснули кнопку, під формою з’явився блок з вашим об’єктом
 
-    if (!userAge) {
-        msg.innerText = 'Please enter correct age';
-    } else if (userAge >= 18) {
-        msg.innerText = 'You are welcome!';
-    } else {
-        msg.innerText = 'Your are not allowed!';
-    }
-    document.body.appendChild(msg);
+let form = document.forms.user_form;
+
+let submitBtn = document.getElementsByTagName('button')[0];
+submitBtn.onclick = function (event) {
+    event.preventDefault();
+    let user_name = form.user_name.value;
+    let user_surname = form.user_username.value;
+    let user_age = form.user_age.value;
+
+    let userInfo = {user_name, user_surname, user_age};
+
+    let container = document.createElement('div');
+    container.classList.add('container');
+    container.innerText = `${user_name} ${user_surname} ${user_age}`;
+    document.body.appendChild(container);
 }
 
 </script>
