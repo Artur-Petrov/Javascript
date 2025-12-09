@@ -57,6 +57,10 @@
 <!---------------------------------------------------------->
 
 <!--Task 10 #NKB0tgWIK1G -->
+<div id="data-container"></div>
+
+<button id="prev-btn">Prev</button>
+<button id="next-btn">Next</button>
 <!---------------------------------------------------------->
 <script>
 //     #sH8c4er
@@ -237,6 +241,59 @@
 //     При натисканні next виводяться наступні 10 об’єктів
 //
 // При натисканні prev виводяться попередні 10 об’єктів
+
+const per_page = 10;
+let currentPage = 1;
+const allItems = 100;
+
+let container = document.getElementById('data-container');
+let prevBtn = document.getElementById('prev-btn');
+let nextBtn = document.getElementById('next-btn');
+
+const dataArray = [];
+for (let i = 1; i <=allItems ; i++) {
+    dataArray.push(`Some obj with  #${i}`);
+}
+
+const allPages = dataArray.length/per_page;
+
+function prevNextStatus() {
+    prevBtn.disabled = currentPage === 1;
+    nextBtn.disabled = currentPage === allPages;
+}
+
+function renderPage() {
+    const startIndex = (currentPage - 1) * per_page;
+    const endIndex = startIndex + per_page;
+
+    const shownItems = dataArray.slice(startIndex, endIndex);
+
+    container.innerHTML = '';
+
+    for (const item of shownItems) {
+        const itemDiv = document.createElement('div');
+        itemDiv.innerText = item;
+        container.appendChild(itemDiv);
+    }
+
+    prevNextStatus();
+}
+
+nextBtn.addEventListener('click', () => {
+    if (currentPage < allPages) {
+        currentPage++;
+        renderPage();
+    }
+});
+
+prevBtn.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        renderPage();
+    }
+});
+
+renderPage();
 
 </script>
 
