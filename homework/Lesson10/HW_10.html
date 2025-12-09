@@ -11,21 +11,53 @@
 <!--  Task 1   #sH8c4er-->
 <!--<div id="text" style="width: 100px; height: 100px; background-color: silver;"></div>-->
 <!--<button>send</button>-->
-<!---->
+<!---------------------------------------------------------->
 
 <!--Task 2 #j693ca8-->
 <!--<input id="age" placeholder="Enter your age">-->
 <!--<button id="check">Send</button>-->
-<!---->
+<!---------------------------------------------------------->
 
 <!--Task 3 #ymAmN2xJ-->
-<form name="user_form">
-    <input type="text" name="user_name">
-    <input type="text" name="user_username">
-    <input type="number" name="user_age">
-    <button>Submit</button>
-</form>
-<!---->
+<!--<form name="user_form">-->
+<!--    <input type="text" name="user_name">-->
+<!--    <input type="text" name="user_username">-->
+<!--    <input type="number" name="user_age">-->
+<!--    <button>Submit</button>-->
+<!--</form>-->
+<!---------------------------------------------------------->
+
+<!-- Task 4 #2VaLt4vDczH-->
+<!--<div id="div"></div>-->
+<!---------------------------------------------------------->
+
+<!--Task 5 #LhSfdhM3-->
+<!---------------------------------------------------------->
+
+<!--Task 6 #Jg0gPO00-->
+<!--<input type="number" id="kg" placeholder="Enter kg">-->
+<!--<p>Converted to pounds: <span id="lbs">0</span></p>-->
+<!---------------------------------------------------------->
+
+<!--Task 7 #RbQGnH5DuC-->
+<!---------------------------------------------------------->
+
+<!--Task 8 #kUSgFqWY-->
+<!--<form id="tableForm">-->
+<!--    <input type="number" name="rows">-->
+<!--    <input type="number" name="columns">-->
+<!--    <input type="text" name="data">-->
+<!--    <button>submit</button>-->
+<!--</form>-->
+<!--<table id="table"></table>-->
+<!---------------------------------------------------------->
+
+<!--Task 9 #bq1zkx7WP-->
+<!--<div id="target"></div>-->
+<!---------------------------------------------------------->
+
+<!--Task 10 #NKB0tgWIK1G -->
+<!---------------------------------------------------------->
 <script>
 //     #sH8c4er
 //
@@ -37,9 +69,12 @@
 //     div.style.display = 'none';
 // }
 
+// ------------------------------------------------------------------------------------------------------------
+
 // #j693ca8
 //
 // – створити інпут, який приймає вік людини, та кнопку, яка підтверджує дію. При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік, чи менше він за 18, та повідомити про це користувача
+
 // let age = document.getElementById('age');
 // let check = document.getElementById('check');
 //
@@ -57,26 +92,151 @@
 //     document.body.appendChild(msg);
 // }
 
+// ------------------------------------------------------------------------------------------------------------
+
 // #ymAmN2xJ
 //
 // Створити форму з трьома полями для name, surname, age та кнопкою. При натисканні на кнопку зчитати дані з полів, та вивести об’єкт в документ. Іншими словами : заповнили форму, натиснули кнопку, під формою з’явився блок з вашим об’єктом
 
-let form = document.forms.user_form;
+// let form = document.forms.user_form;
+//
+// let submitBtn = document.getElementsByTagName('button')[0];
+// submitBtn.onclick = function (event) {
+//     event.preventDefault();
+//     let user_name = form.user_name.value;
+//     let user_surname = form.user_username.value;
+//     let user_age = form.user_age.value;
+//
+//     let userInfo = {user_name, user_surname, user_age};
+//
+//     let container = document.createElement('div');
+//     container.classList.add('container');
+//     container.innerText = `${user_name} ${user_surname} ${user_age}`;
+//     document.body.appendChild(container);
 
-let submitBtn = document.getElementsByTagName('button')[0];
-submitBtn.onclick = function (event) {
-    event.preventDefault();
-    let user_name = form.user_name.value;
-    let user_surname = form.user_username.value;
-    let user_age = form.user_age.value;
+// ------------------------------------------------------------------------------------------------------------
 
-    let userInfo = {user_name, user_surname, user_age};
+// #2VaLt4vDczH
+//
+// є сторінка, на якій є блок, в кому знаходиться цифра. Написати код, який при кожному перезавантажені сторінки буде додавати до неї +1
 
-    let container = document.createElement('div');
-    container.classList.add('container');
-    container.innerText = `${user_name} ${user_surname} ${user_age}`;
-    document.body.appendChild(container);
-}
+// let number = JSON.parse(localStorage.getItem('number'));
+// number +=1;
+//
+// localStorage.setItem('number', number);
+// document.getElementById('div').innerHTML = number;
+
+// ------------------------------------------------------------------------------------------------------------
+
+// #LhSfdhM3
+//
+// Є сторінка index.html (назва довільна), при відвідуванні якої в локальне сховище, в масив sessionsList зберігається інформація про дату та час відвідування сторінки. Є  сторінка sessionsListPage.html (назва довільна), при відвідуванні якої потрібно відмалювати всю інформацію про відвідування сторінки index.html. Інфу НЕ виводити в консоль, а малювати в DOM
+
+// let sessionsList;
+// if (localStorage.getItem('sessionList')) {
+//     sessionsList = JSON.parse(localStorage.getItem('sessionList'));
+// } else {
+//     sessionsList = [];
+// }
+//
+// sessionsList.push(new Date());
+// localStorage.setItem('sessionList', JSON.stringify(sessionsList));
+
+// ------------------------------------------------------------------------------------------------------------
+
+// #Jg0gPO00
+//
+// створити конвертор ваги з кг в фунти. дані заповнюються через інпут. При введенні даних обрахунок стається миттєво, без натискань додаткових кнопок
+
+// const kg_input = document.getElementById('kg');
+// const lbs_result = document.getElementById('lbs');
+//
+// kg_input.oninput = function () {
+//     let kg = +kg_input.value;
+//     lbs_result.innerText = kg * 2.20462;
+// }
+
+// ------------------------------------------------------------------------------------------------------------
+
+// #RbQGnH5DuC
+//
+// В localStorage зберігаються масиви. Вам потрібно зробити функцію, які дістає потрібний вам масив з localStorage та додає в нього об’єкт
+//
+// сигнатура функції –
+//
+// addToLocalStorage(arrayName:string,objToAdd:any{}):void
+
+// function addToLocalStorage(arrayName,objToAdd ) {
+//     let arr = JSON.parse(localStorage.getItem(arrayName)) || [];
+//
+//     arr.push(objToAdd);
+//     localStorage.setItem(arrayName, JSON.stringify(arr));
+// }
+// addToLocalStorage('sessionList', {});
+
+// ------------------------------------------------------------------------------------------------------------
+
+// #kUSgFqWY
+//
+// Створити 3 інпута та кнопку. Один визначає кількість рядків, другий – кількість ячеєк, третій – вміст ячеєк.
+//
+//     При натисканні кнопки вся ця інформація зчитується і формується табличка з відповідним вмістом.
+
+// let table = document.getElementById('table');
+//
+// let tableFactory = document.forms.tableForm;
+//
+// tableFactory.onsubmit = function (event) {
+//     event.preventDefault();
+//     table.innerText = '';
+//     let rows = +tableFactory.rows.value;
+//     let columns = +tableFactory.columns.value;
+//     let data = tableFactory.data.value;
+//
+//     for (let i = 0; i < rows ; i++) {
+//         let tr = document.createElement('tr');
+//         for (let j = 0; j < columns; j++) {
+//             let td = document.createElement('td');
+//             td.innerText = data;
+//             tr.appendChild(td);
+//         }
+//         table.appendChild(tr);
+//     }
+// }
+
+// ------------------------------------------------------------------------------------------------------------
+
+// #bq1zkx7WP
+//
+// *** (подібне було вище, але…будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення “100грн”
+//
+// при перезавантаженні сторінки до значення додається по 10грн, але !!! зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
+//
+//     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд, нічого не відбувається
+
+// let price = +localStorage.getItem('price') || 100;
+// let lastPriceUpdate = +localStorage.getItem('lastPriceUpdate') || 0;
+//
+// let currentTime = Date.now();
+//
+// if (currentTime - lastPriceUpdate >= 10000) {
+//     price += 10;
+//     localStorage.setItem('price', price);
+//     localStorage.setItem('lastPriceUpdate', currentTime);
+// }
+// document.getElementById('target').innerText = price + 'grn';
+
+// ------------------------------------------------------------------------------------------------------------
+
+// ***PAGINATION
+//
+// зробити масив на 100 об’єктів та дві кнопки prev next
+//
+// при завантаженні сторінки з’являються перші 10 об’єктів.
+//
+//     При натисканні next виводяться наступні 10 об’єктів
+//
+// При натисканні prev виводяться попередні 10 об’єктів
 
 </script>
 
