@@ -10,6 +10,57 @@
 <body>
 
 
+<script>
+    // fetch
+    // відкриті API для практики
+    // JSONPlaceholder
+    // dummyjson
 
+    // функція fetch повертає обєкт з типом promise
+    // fetch це підтягнути, підтягнення
+    // fetch('https://jsonplaceholder.typicode.com/users')
+    // підтягнути з доменного імя https://jsonplaceholder.typicode.com
+    // джерело users він тут endpoint
+    // і відповідь з сервера ми вписуємо в response``
+
+    // .then(response => response.json()) // так буде завжди
+    // .then(json => console.log(json))
+
+    // .then(response => response.json()) // .json() конвертує отриману відповідь з сервера в js формат
+    // .then(users => {
+    //     for (const {name, username, email} of users) {
+    //         document.write(`<div>
+    //             ${name} ${username} ${email}
+    //         </div>`)
+    //     }
+    // });
+
+    // dummy json
+    fetch('https://dummyjson.com/products?limit=3&skip=10') // в url прописуємо параметри після ?
+        .then(response => response.json())
+        .then(res => {
+            console.log(res);
+            let {products} = res; // дістали products
+            document.write(`<div>`);
+            for (const product of products) {
+                document.write(`<div>`);
+                document.write(`<p>${product.id} ${product.title} - ${product.price}</p>`);
+                document.write(`<img src="${product.thumbnail}" alt="">`)
+                document.write(`</div>`);
+            }
+            document.write(`</div>`);
+        });
+
+    fetch('https://dummyjson.com/products/add', { // http method POST to add new item
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            title: 'BMW Pencil',
+        })
+    })
+        .then(res => res.json()) // тут сервер обробив і каже ось тут оновленний варіант
+        .then(value => console.log(value));
+
+</script>
 </body>
 </html>
