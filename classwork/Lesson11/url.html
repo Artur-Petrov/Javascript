@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>URL</title>
+</head>
+<body>
+
+
+<script>
+    //щоб вручну не прописувати весь час ті параметри після знаку ?
+    // є клас URL
+    let url = new URL('https://jsonplaceholder.typicode.com/posts'); // передається базовий сегмент тільки
+    url.searchParams.set('userId', 8);
+    url.searchParams.set('asd', 'sadasd');
+    url.searchParams.get('asd'); // забрати інформацію з певного параметра
+
+    // можна append для впровадження двох url з однаковими ключами, це не хороша практика
+    // set якщо я вже знайду ключ який ти вже визначаєш то я просто перезапишу значення ключ залишиться, не буде дубляжів
+
+    fetch(url)
+        .then(response => response.json())
+        .then(value => console.log(value));
+
+</script>
+</body>
+</html>
