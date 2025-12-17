@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW 11.1</title>
+</head>
+<body>
+<div id="target"></div>
+<script>
+let targetDiv = document.getElementById("target");
+    fetch('https://dummyjson.com/carts')
+        .then(value => value.json())
+        .then(cartObj => {
+            let {carts} = cartObj;
+
+            for (const item of carts) {
+                let div = document.createElement('div');
+                div.classList.add('wrapper');
+                let infoDiv = document.createElement('div');
+                infoDiv.innerText =`
+                'total' : ${item.total},
+                discountedTotal : ${item.discountedTotal},
+                userId : ${item.userId},
+                totalProducts : ${item.totalProducts},
+                totalQuantity : ${item.totalQuantity}
+                `
+
+                let ol = document.createElement('ol');
+                for (const olElement of item.products) {
+                    let li = document.createElement('li');
+                    li.innerText = `
+                      "id": ${olElement.id},
+                      "title": ${olElement.title},
+                      "price": ${olElement.price},
+                      "quantity": ${olElement.quantity},
+                      "total": ${olElement.total},
+                      "discountPercentage": ${olElement.discountPercentage},
+                      "discountedTotal": ${olElement.discountedTotal},
+                    `;
+
+                    let img = document.createElement('img');
+                    img.src = olElement.thumbnail;
+                    li.appendChild(img);
+                    ol.appendChild(li);
+                }
+
+                div.append(infoDiv, ol);
+                targetDiv.appendChild(div);
+            }
+        });
+
+</script>
+
+</body>
+</html>

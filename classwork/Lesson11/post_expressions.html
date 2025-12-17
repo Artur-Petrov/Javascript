@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Post Expressions</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label>
+        userId
+        <input type="number" name="userId">
+    </label>
+    <label>
+        title
+        <input type="text" name="title">
+    </label>
+    <label>
+        body
+        <input type="text" name="body">
+    </label>
+    <button>save</button>
+</form>
+
+<script>
+// regex101.com
+let form = document.forms[0];
+form.onsubmit = function (event) {
+    event.preventDefault();
+    let userId = this.userId.value;
+    // console.log(userId.match(/\d/g)); // check if a number returns ітеруємий object
+    // console.log(userId.match(/[0-4]/g)); // from 0 to 4 can be 1234
+    let title = this.title.value;
+    let body = this.body.value;
+
+    if(!!userId.match(/[0-9]/g) && !!body.match(/(\w+\s){3,}/g)){ // if there are no numbers reject the string expression
+    // якщо в айді тільки цифри і боді  з мінімум 3 словами то перевірка пройшла
+
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
+            body: JSON.stringify({ // тут body це тіло реквести ніякого діла до змінної body не має
+                title: title,
+                body: body, // тут body значення зі змінної
+                userId: +userId,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+    }
+    // console.log(!!body.match(/(\w+\s){3,}/g));
+    // if there are letters// w+ means more than 1 symbol \s space // від трьох слів
+    // body.match(/\w{1,5}/g) // range from 1 tio 5
+    // !! привели до bool
+
+    // console.log(userId, title, body);
+
+
+}
+
+</script>
+
+</body>
+</html>
