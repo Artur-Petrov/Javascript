@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HW 11_2</title>
+</head>
+<body>
+<div id="target"></div>
+<script>
+    let targetDiv = document.getElementById("target");
+    fetch('https://dummyjson.com/recipes')
+        .then(res => res.json())
+        .then(receiptsObj => {
+            // console.log(receiptsObj)
+            
+            const { recipes } = receiptsObj;
+            console.log(recipes)
+
+            for (const recipe of recipes) {
+                let divWithReceipt = document.createElement('div');
+                divWithReceipt.innerText = `
+                "id": ${recipe.id},
+                "name": ${recipe.name},
+                "prepTimeMinutes": ${recipe.prepTimeMinutes},
+                "cookTimeMinutes": ${recipe.cookTimeMinutes},
+                "servings": ${recipe.servings},
+                "difficulty": ${recipe.difficulty},
+                "cuisine": ${recipe.cuisine},
+                "caloriesPerServing": ${recipe.caloriesPerServing},
+                "userId": ${recipe.userId},
+                "rating": ${recipe.rating},
+                "reviewCount": ${recipe.reviewCount},
+                "mealType": ${recipe.mealType}
+                `;
+
+                let ulIngredients = document.createElement('ul');
+                for (const ingredients of recipe.ingredients) {
+                    let li = document.createElement('li');
+                    li.innerText = `${ingredients}`;
+                    ulIngredients.appendChild(li);
+                }
+
+                let olInstructions = document.createElement('ol');
+                for (const instructions of recipe.instructions) {
+                    let li = document.createElement('li');
+                    li.innerText = `${instructions}`;
+                    olInstructions.appendChild(li);
+                }
+
+                let ulTags = document.createElement('ul');
+                for (const tag of recipe.tags) {
+                    let li = document.createElement('li');
+                    li.style.listStyleType = "'# '";
+                    li.innerText = `${tag}`;
+                    ulTags.appendChild(li);
+                }
+
+                let img = document.createElement('img');
+                img.src = recipe.image;
+
+                divWithReceipt.append(ulIngredients, olInstructions, ulTags, img);
+                targetDiv.appendChild(divWithReceipt);
+            }
+        });
+</script>
+
+</body>
+</html>
