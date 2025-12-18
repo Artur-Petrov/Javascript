@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event loop</title>
+</head>
+<body>
+<script>
+    // стандартна синхронна операція
+    // console.log('start');
+    // console.log('start1');
+    // console.log('start2');
+    // console.log('start3');
+    // console.log('end');
+
+    console.log('1');
+
+    setTimeout(function () {
+        console.log('hi');
+    }, 1000);
+    setTimeout(function () {
+        console.log('hello');
+    }, 200);
+    console.log('2');
+</script>
+</body>
+</html>
