@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+</head>
+<body>
+
+<script>
+
+    new Promise(resolve => {
+        setTimeout(() => {
+            let x = 1;
+            console.log(x);
+            resolve(x); // resolve далі передаємо в value
+        }, 1000);
+    }).then(value => { // тут прийшов наш resolve з x з попередньої функції
+       return new Promise(resolve => { // обовязково після першого промісу нам треба повертати новий проміс
+            setTimeout(() => {
+                value++;
+                console.log(value);
+                resolve(value); // і також так само повертаємо resolve
+            }, 1000);
+        });
+    }).then(value => {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                value++;
+                console.log(value);
+                resolve(value);
+            }, 1000);
+        });
+    }).then(value => {
+        new Promise(resolve => {
+            setTimeout(() => {
+                value++;
+                console.log(value);
+                resolve(value);
+            }, 1000);
+        });
+    });
+
+</script>
+
+</body>
+</html>
